@@ -2,6 +2,7 @@ plugins {
     id("com.android.application") // Android 애플리케이션 플러그인
     id("kotlin-android") // Kotlin 플러그인
     id("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 
 android {
