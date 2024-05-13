@@ -40,4 +40,6 @@ class StationAdapter : RecyclerView.Adapter<StationAdapter.StationViewHolder>() 
         val locationTextView: TextView = itemView.findViewById(R.id.locationTextView)
         val stationIdView: TextView = itemView.findViewById(R.id.stationId)
     }
+
 }
+

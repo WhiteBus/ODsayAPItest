@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity(), FindNearestStationView {
         // 실패 시 처리
         // 예: Toast 또는 AlertDialog로 사용자에게 실패 메시지 표시
     }
+
     object GlobalValue_start{
         var startPointStation: Station?=null
         val longitude: Double = 127.126378 // 경도
