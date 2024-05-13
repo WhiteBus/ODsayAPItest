@@ -3,6 +3,9 @@ package com.example.temp_odsay_project
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.temp_odsay_project.remote.dto.PathResult
+import com.example.temp_odsay_project.remote.retrofit.PathInterface
+import com.example.temp_odsay_project.remote.service.PathService
+import com.example.temp_odsay_project.remote.view.PathView
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.http.GET
@@ -11,62 +14,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-interface PathInterface {
-    @GET("searchPubTransPath")
-    fun getpathBusNum(
-        @Query("lang") lang: String, // 언어 코드 (예: "0")
-        @Query("SX") SX:Double,	//출발지 X좌표 (경도좌표)
-        @Query("SY") SY:Double, //출발지 Y좌표 (위도좌표)
-        @Query("EX") EX:Double,//도착지 X좌표 (경도좌표)
-        @Query("EY") EY:Double, //도착지 Y좌표 (위도좌표)
-        @Query("SearchPathType") SearchPathType:Int, //도시 내 경로수단을 지정 (버스 = 2)
-        @Query("apiKey") apiKey: String // API 키
-    ): Call<PathResult>
-}
-interface PathView {
-    // 검색 성공 시 호출될 메서드
-    fun onSearchStationSuccess(response: PathResult)
-
-    // 검색 실패 시 호출될 메서드
-    fun onSearchStationFailure(errorMessage: String)
-}
-
-class PathService(private val retrofit: Retrofit) {
-
-    private val pathInterface: PathInterface = retrofit.create(PathInterface::class.java)
-
-    fun searchPath(
-        lang: String,
-        SX: Double,
-        SY: Double,
-        EX: Double,
-        EY: Double,
-        SearchPathType: Int,
-        apiKey: String,
-        callback: PathView
-    ) {
-        pathInterface.getpathBusNum(lang, SX, SY, EX, EY, SearchPathType, apiKey)
-            .enqueue(object : Callback<PathResult> {
-                override fun onResponse(call: Call<PathResult>, response: Response<PathResult>) {
-                    if (response.isSuccessful) {
-                        response.body()?.let {
-                            callback.onSearchStationSuccess(it)
-                        } ?: run {
-                            callback.onSearchStationFailure("Response body is null.")
-                        }
-                    } else {
-                        callback.onSearchStationFailure("Failed to get response.")
-                    }
-                }
-
-                override fun onFailure(call: Call<PathResult>, t: Throwable) {
-                    callback.onSearchStationFailure(t.message ?: "Unknown error occurred.")
-                }
-            })
-    }
-}
-
-class searchPubTransPath : AppCompatActivity(), PathView {
+class Main_searchPubPathT: AppCompatActivity(), PathView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

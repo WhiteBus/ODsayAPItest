@@ -99,7 +99,7 @@ class Main_vi_Search_des : AppCompatActivity(), SearchStationView {
         println("stationID: ${station.stationID}")
         println("x: ${station.x}")
         println("y: ${station.y}")
-        val intent = Intent(this, searchPubTransPath::class.java)
+        val intent = Intent(this, Main_searchPubPathT::class.java)
         startActivity(intent)
     }
 

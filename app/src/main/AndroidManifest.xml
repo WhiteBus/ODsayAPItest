@@ -28,7 +28,7 @@
         </activity>
         <activity android:name=".MainActivity"/>
         <activity
-            android:name=".searchPubTransPath" />
+            android:name=".Main_searchPubPathT" />
 
     </application>
 

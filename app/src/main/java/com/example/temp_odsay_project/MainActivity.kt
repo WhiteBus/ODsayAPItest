@@ -1,7 +1,7 @@
 package com.example.temp_odsay_project
 
 import FindNearestStationService
-import StationAdapter
+import com.example.temp_odsay_project.remote.Adapter.StationAdapter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
