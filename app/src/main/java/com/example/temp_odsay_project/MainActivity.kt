@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), FindNearestStationView {
         val latitude = 37.449711 // 위도
         val radius = 400 // 검색 반경 (미터)
         val stationClass = 1 // 역 종류 (1: 지하철역)
-        val apiKey = "HPHPd7QcYbOiPd61vVYcvc0iXnhHZCyfNHh6l9UqGj4"
+        val apiKey = "rfSg7BEmSQsZFsPbMswlSOp5iiDu6smXQXY56n+aR4U"
 
         // FindNearestStationService를 사용하여 역 정보 가져오기
         findNearestStationService.getNearestStation(lang, longitude, latitude, radius, stationClass, apiKey)

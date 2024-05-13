@@ -89,7 +89,7 @@ class searchPubTransPath : AppCompatActivity(), PathView {
             val EY = endStation.y
 
             // API 호출
-            pathService.searchPath("0", SX, SY, EX, EY, 2, "HPHPd7QcYbOiPd61vVYcvc0iXnhHZCyfNHh6l9UqGj4", this)
+            pathService.searchPath("0", SX, SY, EX, EY, 2, "rfSg7BEmSQsZFsPbMswlSOp5iiDu6smXQXY56n+aR4U", this)
         } else {
             // 출발지 또는 도착지가 설정되지 않은 경우 처리
             println("Please select both start and end stations.")
