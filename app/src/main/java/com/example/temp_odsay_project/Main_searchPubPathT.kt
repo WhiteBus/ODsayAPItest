@@ -14,7 +14,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
+<<<<<<< HEAD
 class Main_searchPubPathT: AppCompatActivity(), PathView {
+=======
+
+class Main_searchPubPathT : AppCompatActivity(), PathView {
+>>>>>>> 0566bbe87eaa3afcd78eb3ab3a2bbf8c14de1aaa
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

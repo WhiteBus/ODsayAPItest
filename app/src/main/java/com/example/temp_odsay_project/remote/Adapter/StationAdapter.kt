@@ -47,4 +47,10 @@ class StationAdapter(private val onItemClick: (Station) -> Unit) : RecyclerView.
         val locationTextView: TextView = itemView.findViewById(R.id.locationTextView)
         val stationIdView: TextView = itemView.findViewById(R.id.stationId)
     }
+<<<<<<< HEAD
 }
+=======
+
+}
+
+>>>>>>> 0566bbe87eaa3afcd78eb3ab3a2bbf8c14de1aaa

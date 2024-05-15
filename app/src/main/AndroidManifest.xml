@@ -16,7 +16,6 @@
         android:theme="@style/Theme.Temp_odsay_project"
         tools:targetApi="31">
 
-<!--            .Main_vi_Search_des로 바꿔서 실행해보기-->
         <activity
             android:name=".Main_vi_Search_des"
             android:exported="true">
@@ -26,9 +25,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".MainActivity"/>
         <activity
             android:name=".Main_searchPubPathT" />
+=======
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Main_searchPubPathT" />
+>>>>>>> 0566bbe87eaa3afcd78eb3ab3a2bbf8c14de1aaa
 
     </application>
 
