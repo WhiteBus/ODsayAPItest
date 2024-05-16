@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.temp_odsay_project.R
 import com.example.temp_odsay_project.remote.dto.Station
 
-class StationAdapter : RecyclerView.Adapter<StationAdapter.StationViewHolder>() {
+class StationAdapter(private val onItemClick: (Station) -> Unit) : RecyclerView.Adapter<StationAdapter.StationViewHolder>() {
 
     private var stationList: List<Station> = listOf() // 역 정보 리스트
 
@@ -26,6 +26,11 @@ class StationAdapter : RecyclerView.Adapter<StationAdapter.StationViewHolder>() 
         holder.locationTextView.text = location
         val stationId = "stationId: ${station.stationID}"
         holder.stationIdView.text = stationId
+
+        // 아이템이 클릭되었을 때, onItemClick 콜백 실행
+        holder.itemView.setOnClickListener {
+            onItemClick(station)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -42,6 +47,10 @@ class StationAdapter : RecyclerView.Adapter<StationAdapter.StationViewHolder>() 
         val locationTextView: TextView = itemView.findViewById(R.id.locationTextView)
         val stationIdView: TextView = itemView.findViewById(R.id.stationId)
     }
+<<<<<<< HEAD
+}
+=======
 
 }
 
+>>>>>>> 0566bbe87eaa3afcd78eb3ab3a2bbf8c14de1aaa
