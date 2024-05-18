@@ -8,9 +8,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.temp_odsay_project.R
 import com.example.temp_odsay_project.remote.dto.Station
 
-class StationAdapter(private val onItemClick: (Station) -> Unit) : RecyclerView.Adapter<StationAdapter.StationViewHolder>() {
+class StationAdapter : RecyclerView.Adapter<StationAdapter.StationViewHolder>() {
 
     private var stationList: List<Station> = listOf() // 역 정보 리스트
+    private var itemClickListener: OnItemClickListener? = null
+
+    interface OnItemClickListener {
+        fun onItemClick(station: Station)
+    }
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.itemClickListener = listener
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StationViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_station, parent, false)
@@ -27,9 +36,9 @@ class StationAdapter(private val onItemClick: (Station) -> Unit) : RecyclerView.
         val stationId = "stationId: ${station.stationID}"
         holder.stationIdView.text = stationId
 
-        // 아이템이 클릭되었을 때, onItemClick 콜백 실행
+        // 아이템 클릭 시 이벤트 처리
         holder.itemView.setOnClickListener {
-            onItemClick(station)
+            itemClickListener?.onItemClick(station)
         }
     }
 
@@ -47,10 +56,8 @@ class StationAdapter(private val onItemClick: (Station) -> Unit) : RecyclerView.
         val locationTextView: TextView = itemView.findViewById(R.id.locationTextView)
         val stationIdView: TextView = itemView.findViewById(R.id.stationId)
     }
-<<<<<<< HEAD
-}
-=======
-
 }
 
->>>>>>> 0566bbe87eaa3afcd78eb3ab3a2bbf8c14de1aaa
+
+
+

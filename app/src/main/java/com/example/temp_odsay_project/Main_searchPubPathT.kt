@@ -14,20 +14,15 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-<<<<<<< HEAD
-class Main_searchPubPathT: AppCompatActivity(), PathView {
-=======
-
 class Main_searchPubPathT : AppCompatActivity(), PathView {
->>>>>>> 0566bbe87eaa3afcd78eb3ab3a2bbf8c14de1aaa
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.item_subpath)
 
         // 출발지와 도착지의 좌표를 설정
-        val startStationX = MainActivity.GlobalValue_start.longitude
-        val startStationY = MainActivity.GlobalValue_start.latitude
+        val startStationX = MainActivity.GlobalValue_start.station_longitude
+        val startStationY = MainActivity.GlobalValue_start.station_latitude
         val endStation = Main_vi_Search_des.GlobalValues_end.endPointStation
 
         if (startStationY != null && startStationX != null && endStation != null) {
