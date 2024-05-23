@@ -23,7 +23,7 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Main_NearestStation"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,9 +32,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Main_vi_Search_des"/>
-        <activity
-            android:name=".Main_searchPubPathT" />
+        <activity android:name=".searchPubPathT"/>
 
+        <activity android:name=".Main_Bus_Arrival"/>
+<!--        <activity android:name=".TransitInfoActivity"/>-->
     </application>
+
 
 </manifest>

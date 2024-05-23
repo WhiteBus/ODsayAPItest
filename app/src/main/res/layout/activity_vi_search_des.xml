@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Main_vi_Search_des">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,7 +37,8 @@
             android:textColorHint="@color/black"
             android:textSize="22dp"
             android:imeOptions="actionSearch"
-            app:layout_constraintStart_toEndOf="@id/iv_main_hamburger_iv"/>
+            app:layout_constraintStart_toEndOf="@id/iv_main_hamburger_iv"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView

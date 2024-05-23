@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.types.expressions.GenericArrayClassLiteralSupport.Enabled.isEnabled
+
 plugins {
     id("com.android.application") // Android 애플리케이션 플러그인
     id("kotlin-android") // Kotlin 플러그인
@@ -27,6 +29,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+    viewBinding {
+        enable = true
     }
 
     compileOptions {
