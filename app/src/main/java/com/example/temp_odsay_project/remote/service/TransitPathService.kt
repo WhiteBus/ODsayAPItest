@@ -2,14 +2,13 @@ package com.example.temp_odsay_project.remote.service
 
 import com.example.temp_odsay_project.remote.dto.PathResult
 import com.example.temp_odsay_project.remote.retrofit.PathInterface
-import com.example.temp_odsay_project.remote.view.TransitPathView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 
 
-//class TransitPathService(private val retrofit: Retrofit) {
+class TransitPathService(private val retrofit: Retrofit) {
 //    fun TransitSearchPath(
 //        lang: String,
 //        SX: Double,
@@ -38,4 +37,4 @@ import retrofit2.Retrofit
 //        })
 //        return call
 //    }
-//}
+}
